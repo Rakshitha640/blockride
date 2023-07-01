@@ -12,7 +12,7 @@ const NavBar=(props)=>{
     const [error, setError] = useState("")
     const { logout } = useAuth()
     const history = useHistory()
-    
+
     async function handleLogout() {
         setError("")
 
@@ -26,7 +26,7 @@ const NavBar=(props)=>{
 
         var user=auth.currentUser;
         if (user) {
-       
+
           return (
             <div className="NavBar">
                        <nav className="nav">
@@ -54,7 +54,7 @@ const NavBar=(props)=>{
                                                 width='30'
                                                 height='30'
                                                 src={`data:image/png;base64,${new Identicon(props.account, 30).toString()}`}
-                                            />  
+                                            />
                                             : <span></span>
                                             }
                                             <small id="account2">{props.account}</small>
@@ -62,74 +62,74 @@ const NavBar=(props)=>{
                                 <img src={etherbal} width="30" height="30" className="d-inline-block align-top" alt="" />
                                 <p>&nbsp;{props.balance}&nbsp;Ethers</p>
                             </div>
-           
-                                            
-                             
+
+
+
                                <li></li>
-                                        
+
                                         <li>  <button type="submit" className="btn btn-secondary btn-block" onClick={handleLogout}>Logout</button></li>
                            </ul>
-           
+
                            <footer className="footer">
                                <p>
                                    @RIDE SHARING
                                </p>
                        </footer>
                        </nav>
-                       
+
                    </div>
           )
         } else {
- 
+
             return (
                 <div className="NavBar">
                            <nav className="nav">
                                <div className="profile">
                                    <img src={avatar} alt=""/>
                                 </div>
-               
+
                                <ul className="nav-items">
                                    <li className="nav-item">
                                    <NavLink className="nav-link" to="/" exact>
                                        Home
                                    </NavLink>
-                           
+
                                    </li>
-                                 
+
                                    <li className="nav-item">
                                    <NavLink className="nav-link" exact to="/login">
                                        Login
                                        </NavLink>
-               
-               
+
+
                                        </li>
                                        <li className="nav-item">
                                        <NavLink className="nav-link" to="/ridersignup" exact>
                                            Rider Sign Up
                                            </NavLink>
-               
+
                                        </li>
                                        <li className="nav-item">
                                        <NavLink className="nav-link" to="/driversignup" exact>
                                            Driver Sign Up
                                            </NavLink>
-               
+
                                        </li>
-                                   
-                                  
+
+
                                </ul>
-               
+
                                <footer className="footer">
                                    <p>
                                        @RIDE SHARING
                                    </p>
                            </footer>
                            </nav>
-                           
+
                        </div>
             )
         }
 
     }
-        
+
 export default NavBar;
